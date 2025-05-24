@@ -1,0 +1,2109 @@
+/* Importar una fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* GLOBAL */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #f0f2f5;*/
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* NAVBAR */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* MAIN CONTENT */
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section h3, section h4 {
+    color: #34495e;
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* LISTAS */
+ol, ul {
+    margin-left: 25px;
+    padding-left: 10px;
+}
+
+ol li, ul li {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* LINKS */
+a {
+    color: #ff7e5f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+     background-color: #1f2937; /* Un gris muy oscuro, elegante */
+    color: #f3f4f6; /* Texto claro y suave */
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 16px;
+    margin-top: 60px;
+    border-top: 3px solid #ff7e5f; /* Línea superior naranja para destacar */
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.3); /* Sombra sutil arriba */
+    font-family: 'Nunito', sans-serif;
+     position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Enlaces dentro del footer (por si agregas) */
+footer a {
+    color: #ff7e5f;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffb997;
+    text-decoration: underline;
+}
+
+/* Opcional: estructura para links o iconos */
+footer .footer-links {
+    margin-top: 15px;
+}
+
+footer .footer-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+#year {
+     font-weight: 700;
+    color: #ff7e5f;
+}
+
+/* BOTONES (genérico) */
+button, .boton-votar {
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover, .boton-votar:hover {
+    background: #eb674e;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* MENSAJE DINÁMICO */
+#mensaje {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* CONCURSOS LISTA */
+#listaConcursos {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#listaConcursos p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+
+section {
+    animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* === LOGIN PAGE === */
+
+body.login-page {
+   background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.login-container h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+.login-container button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #eb674e;
+}
+
+/* Botón de volver al inicio */
+.back-button {
+    margin-top: 15px;
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+}
+
+/* Mensajes */
+.login-container p {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #555;
+}
+
+.login-container a {
+    color: #ff7e5f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+#mensaje {
+    text-align: center;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+
+/* === REGISTRO PAGE === */
+
+body.registro-page {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* El contenedor del registro (div general) */
+body.registro-page > div {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Título */
+body.registro-page h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Campos del formulario */
+body.registro-page form {
+    text-align: left;
+}
+
+body.registro-page label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+body.registro-page input[type="text"],
+body.registro-page input[type="email"],
+body.registro-page input[type="password"],
+body.registro-page select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+body.registro-page input:focus,
+body.registro-page select:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+/* Botón principal */
+body.registro-page button[type="submit"] {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.registro-page button[type="submit"]:hover {
+    background-color: #eb674e;
+}
+
+/* Botón de volver */
+body.registro-page .back-button {
+    margin-top: 15px;
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.registro-page .back-button:hover {
+    background-color: #2c3e50;
+}
+
+/* Mensaje de error */
+body.registro-page #mensaje {
+    text-align: center;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+
+/* === CONCURSOS ACTIVOS PAGE === */
+
+body.concursosActivos {
+    /*background: #bcbcd6; */ /* Fondo suave claro para el body */
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #ff7e5f;
+}
+
+/* Header visual consistente */
+body.concursosActivos header {
+    background-color: #2c3e50;  /* Fondo oscuro para distinguirlo del body */
+    color: #fff;
+    padding: 40px 20px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Agregar sombra para separación */
+}
+
+body.concursosActivos header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+body.concursosActivos nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+body.concursosActivos nav ul li {
+    margin: 0 15px;
+}
+
+body.concursosActivos nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+body.concursosActivos nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content section */
+body.concursosActivos section {
+    background-color: #ffffff;  /* Fondo blanco para el contenido principal */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.8s ease both;
+}
+
+body.concursosActivos section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Listas de concursos */
+#listaConcursosActivos,
+#listaConcursosCerrados {
+    margin-top: 20px;
+}
+
+#listaConcursosActivos p,
+#listaConcursosCerrados p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+}
+
+/* Footer */
+body.concursosActivos footer {
+    background-color: #34495e;  /* Fondo oscuro similar al header */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 16px;
+    margin-top: 60px;
+    border-top: 2px solid #ffcc70;  /* Línea divisoria en la parte superior del footer */
+}
+
+body.concursosActivos footer p {
+    margin: 0;
+}
+
+#year {
+    font-weight: bold;
+    color: #ffcc70;  /* Resaltar el año con un color dorado */
+}
+
+body.concursosActivos footer a {
+    color: #ffcc70;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+body.concursosActivos footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* === GALERÍA PÚBLICA PAGE === */
+
+body.galeriaPublico {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima 100% viewport */
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ff7e5f;
+}
+
+/* Header */
+body.galeriaPublico header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+body.galeriaPublico header h1 {
+    color: #ff7e5f;
+    font-size: 36px;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.galeriaPublico nav {
+    margin-top: 15px;
+}
+
+body.galeriaPublico nav a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+body.galeriaPublico nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main section */
+body.galeriaPublico main {
+    flex: 1 0 auto; /* Permite que main crezca */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+body.galeriaPublico main h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+body.galeriaPublico main p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+}
+body.galeriaPublico footer {
+    flex-shrink: 0; /* Evita que el footer se encoja */
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Galería */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.foto-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.foto-item:hover {
+    transform: scale(1.03);
+}
+
+.foto-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.foto-item h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.foto-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.foto-item p strong {
+    color: #000;
+}
+
+/* Botón de votar */
+.boton-votar {
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-votar:hover {
+    background-color: #eb674e;
+}
+
+.boton-votar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Mensaje */
+#mensaje {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+
+/* === GALERÍA CONCURSO PAGE === */
+
+body.galeriaConcurso {
+    /*background: linear-gradient(to right, #e0eafc, #f9f9f9);*/
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: 'Nunito', sans-serif;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+body.galeriaConcurso header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.galeriaConcurso header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Usuario y concurso */
+.info-usuario {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #ecf0f1;
+}
+
+.info-usuario p {
+    margin: 4px 0;
+}
+
+/* Nav */
+body.galeria nav {
+    margin-top: 15px;
+}
+
+body.galeria nav a {
+    margin: 0 8px;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+body.galeria nav a:hover {
+    color: #f39c12;
+}
+
+/* Main */
+body.galeria main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+body.galeria main h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+
+/* Contenedor general de fotos */
+.foto {
+  display: flex;          /* o grid si prefieres */
+  flex-wrap: wrap;        /* que las fotos bajen a otra fila si no caben */
+  gap: 20px;              /* separación entre fotos */
+  justify-content: center; /* centrar filas */
+  padding-bottom: 30px;   /* para que no quede pegado al footer */
+}
+
+/* Cada foto individual */
+.foto-item {
+  flex: 0 1 280px;        /* ancho base 280px, pero flexible */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.foto-item:hover {
+  transform: scale(1.03);
+}
+
+.foto-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+
+
+#nombreConcurso {
+    color: #ff7e5f;
+    font-weight: bold;
+}
+
+/* Plazos */
+.plazos-concurso {
+    background: #ecf0f1;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.plazos-concurso h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.card-plazos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plazo-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.plazo-item h4 {
+    margin-bottom: 8px;
+    color: #2980b9;
+}
+
+.plazo-item p {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Galería */
+.foto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* columnas más estrechas */
+    gap: 10px;  /* antes era 20px */
+    padding: 10px 0;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Mensaje */
+#mensaje {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-top: 30px;
+}
+
+/* Footer */
+body.galeriaConcurso footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 16px;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+body.galeriaConcurso footer p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+body.galeriaConcurso footer a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+body.galeriaConcurso footer a:hover {
+    text-decoration: underline;
+}
+
+#year {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+
+ main .galeria{
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        flex: 1;
+
+    }
+
+
+
+
+    .estrellas {
+    font-size: 30px;  /* Tamaño de las estrellas */
+    display: flex;
+    justify-content: center;
+    gap: 5px;  /* Espaciado entre las estrellas */
+}
+
+.estrellas .estrella {
+    color: #ddd;  /* Color predeterminado de la estrella (gris claro) */
+    cursor: pointer;
+}
+
+.estrellas .estrella:hover {
+    color: gold;  /* Color de la estrella cuando se pasa el ratón por encima */
+}
+
+
+/* === CONCURSOS PAGE === */
+body.concursosPage {
+    /*background: linear-gradient(135deg, #e0eafc, #cfdef3);*/
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.concursosPage .container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease both;
+}
+
+body.concursosPage h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+body.concursosPage .concursos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+body.concursosPage .concurso-btn {
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff7e5f;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.concursosPage .concurso-btn:hover {
+    background-color: #f1f1f1;
+}
+
+body.concursosPage .concurso-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+body.concursosPage #mensaje {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 16px;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/*Galeria*/
+body.galeria {
+    background: linear-gradient(to right, #e0eafc, #f9f9f9);
+    font-family: 'Nunito', sans-serif;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.galeria header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.galeria header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    color: #ff7e5f;
+}
+
+.info-usuario {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #ecf0f1;
+}
+
+.info-usuario p {
+    margin: 4px 0;
+}
+
+body.galeria nav {
+    margin-top: 15px;
+    text-align: center;
+}
+
+body.galeria nav a {
+    margin: 0 8px;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+body.galeria nav a:hover {
+    color: #f39c12;
+}
+
+body.galeria main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+    animation: fadeInUp 0.8s ease both;
+}
+
+body.galeria main h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+#nombreConcurso {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.plazos-concurso {
+    background: #ecf0f1;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-plazos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plazo-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.plazo-item h4 {
+    margin-bottom: 8px;
+    color: #2980b9;
+}
+
+.plazo-item p {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Galería de fotos */
+.foto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Estrellas para votación */
+.estrellas {
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.estrella {
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.estrella:hover {
+    color: gold;
+}
+
+/* Mensaje dinámico */
+#mensaje {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-top: 30px;
+}
+
+/* Footer */
+body.galeria footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 16px;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+body.galeria footer p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+body.galeria footer a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+body.galeria footer a:hover {
+    text-decoration: underline;
+}
+
+#year {
+    font-weight: bold;
+    color: #f39c12;
+}
+.foto {
+  display: grid; /* o flex, si prefieres */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* === PERFIL PAGE === */
+body.perfil {
+     display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* para que el body ocupe toda la pantalla */
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background-color: #f4f4f9;
+    font-family: 'Nunito', sans-serif;
+    color: #2c3e50;
+}
+
+body.perfil main {
+    max-width: 600px;
+    width: 100%;
+    margin: 60px auto 0;  /* margen arriba y auto horizontal para centrar */
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease both;
+}
+
+body.perfil h2 {
+    color: #2c3e50;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+body.perfil .perfil-dato {
+    margin-bottom: 20px;
+}
+
+body.perfil label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+body.perfil input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body.perfil input[readonly] {
+    background-color: #f9f9f9;
+    border: none;
+    color: #7f8c8d;
+}
+
+body.perfil input::placeholder {
+    color: #ccc;
+}
+
+body.perfil button {
+    width: 100%;
+    padding: 12px;
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+body.perfil button:hover {
+    background: #ee6442;
+}
+
+body.perfil #mensaje {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+body.perfil header h1 {
+    text-align: center;
+    color: #ff7e5f;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+body.perfil nav {
+    text-align: center;
+    margin: 10px 0;
+}
+
+body.perfil nav a {
+    margin: 0 10px;
+    color: #ecf0f1;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+body.perfil nav a:hover {
+    color: #f39c12;
+}
+
+body.perfil footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+    margin-top: 60px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    font-size: 16px;
+        margin-top: auto; /* Empuja el footer hacia abajo */
+
+}
+
+body.perfil footer p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+body.perfil #year {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+
+
+
+
+/* Estilos para la página Subir Foto */
+body.subir {
+ /* background: linear-gradient(to right, #e0eafc, #f9f9f9);*/
+     background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  font-family: 'Nunito', sans-serif;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.subir header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 20px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.subir .info-usuario {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #ecf0f1;
+}
+
+body.subir .info-usuario p {
+  margin: 4px 0;
+}
+
+body.subir .titulo-pagina {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+body.subir nav {
+  margin-top: 15px;
+}
+
+body.subir nav a {
+  color: #ecf0f1;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+body.subir nav a:hover {
+  color: #f39c12;
+}
+
+body.subir main {
+  max-width: 600px;
+  margin: 40px auto 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  animation: fadeInUp 0.8s ease both;
+}
+
+body.subir label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 700;
+  color: #34495e;
+}
+
+body.subir input[type="text"],
+body.subir textarea,
+body.subir select,
+body.subir input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+body.subir button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.subir button:hover {
+  background-color: #ff7e5f;
+}
+
+body.subir #mensaje {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+/* Footer */
+body.subir footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  margin-top: auto;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+body.subir footer p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+body.subir footer #year {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+
+/* Estilos para la página Mis Fotos */
+body.mis-fotos {
+  /*background: linear-gradient(to right, #f8fafc, #e9eff5);*/
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  font-family: 'Nunito', sans-serif;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.mis-fotos header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 20px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.mis-fotos .info-usuario {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #ecf0f1;
+}
+
+body.mis-fotos .info-usuario p {
+  margin: 4px 0;
+}
+
+body.mis-fotos h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+body.mis-fotos nav {
+  margin-top: 15px;
+}
+
+body.mis-fotos nav a {
+  color: #ecf0f1;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+body.mis-fotos nav a:hover {
+  color: #f39c12;
+}
+
+body.mis-fotos main {
+  max-width: 900px;
+  margin: 40px auto 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  animation: fadeInUp 0.8s ease both;
+}
+
+body.mis-fotos .foto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+body.mis-fotos .foto-item {
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.mis-fotos .foto-item img {
+  max-width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body.mis-fotos .foto-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+body.mis-fotos .estado {
+  font-weight: 700;
+  color: #34495e;
+}
+
+body.mis-fotos .foto-item button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+body.mis-fotos .foto-item button:hover {
+  background-color: #c0392b;
+}
+
+body.mis-fotos #mensaje {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+/* Footer */
+body.mis-fotos footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  margin-top: auto;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+body.mis-fotos footer p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+body.mis-fotos footer #year {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+
+body.crear_concurso {
+  font-family: 'Nunito', sans-serif;
+  padding: 40px 20px;
+  /*background-color: #f0f2f5;*/ /* Fondo general como en el body global */
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+body.crear_concurso h2 {
+  text-align: center;
+  color: #2575fc; /* Azul del header/nav para títulos */
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-family: 'Nunito', sans-serif;
+}
+
+#formCrearConcurso {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+body.crear_concurso form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #34495e; /* Texto oscuro gris */
+  font-family: 'Nunito', sans-serif;
+}
+
+body.crear_concurso form input,
+body.crear_concurso form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+body.crear_concurso form input:focus,
+body.crear_concurso form textarea:focus {
+  border-color: #2575fc; /* Azul para foco, acorde con header */
+  outline: none;
+}
+
+body.crear_concurso form button {
+  background-color: #ff7e5f; /* Color principal botones */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 25px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: 'Nunito', sans-serif;
+}
+
+body.crear_concurso form button:hover {
+  background-color: #eb674e; /* Hover más oscuro del naranja */
+}
+
+
+/*Admin*/
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo y contenedor general */
+body.admin {
+  /*background: #f5f7fa;*/
+background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #ff7e5f;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+header nav a {
+  color: #cce0ff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main sections */
+main section {
+  background: #fff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+main section h2 {
+  color: #004080;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 8px;
+}
+
+/* Formulario Configuración Rally */
+form#configRallyForm label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #004080;
+}
+
+form#configRallyForm input[type="text"],
+form#configRallyForm input[type="datetime-local"],
+form#configRallyForm input[type="number"],
+form#configRallyForm textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+form#configRallyForm textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form#configRallyForm input:focus,
+form#configRallyForm textarea:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+form#configRallyForm button[type="submit"] {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#configRallyForm button[type="submit"]:hover {
+  background-color: #0059b3;
+}
+
+/* Tablas: Usuarios, Usuarios Pendientes, Fotos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+table thead {
+  background-color: #004080;
+  color: white;
+}
+
+table thead th {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f1f7ff;
+}
+
+table tbody td {
+  padding: 12px 15px;
+}
+
+/* Acciones: botones o enlaces dentro de tablas */
+table tbody td .btn {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 6px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+table tbody td .btn:hover {
+  background-color: #0059b3;
+}
+
+/* Sección Estadísticas y Resultados */
+#estadisticas,
+#ranking-list {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Canvas del gráfico */
+#graficoVotos {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  form#configRallyForm input[type="text"],
+  form#configRallyForm input[type="datetime-local"],
+  form#configRallyForm input[type="number"],
+  form#configRallyForm textarea,
+  table {
+    font-size: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  main section h2 {
+    font-size: 1.3rem;
+  }
+
+  header nav a {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+
+/*Concursos admin*/
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+body.concursos_admin {
+  /*background-color: #f0f2f5;*/
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+
+  padding: 20px;
+  color: #ff7e5f;
+}
+
+/* Título principal */
+h1 {
+  color: #ff7e5f; /* Azul vivo */
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(37, 117, 252, 0.3);
+}
+
+/* Contenedor botón crear concurso */
+.crear-concurso-container {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Botones */
+.btn-crear,
+.btn-seleccionar {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  user-select: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Botón crear */
+.btn-crear {
+  background-color: #ff7e5f; /* Naranja */
+  box-shadow: 0 4px 8px rgba(255, 126, 95, 0.4);
+}
+
+.btn-crear:hover {
+  background-color: #eb674e;
+  box-shadow: 0 6px 12px rgba(235, 103, 78, 0.6);
+}
+
+/* Botón seleccionar */
+.btn-seleccionar {
+  background-color: #2575fc; /* Azul */
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(37, 117, 252, 0.4);
+}
+
+.btn-seleccionar:hover {
+  background-color: #1a56d0;
+  box-shadow: 0 6px 12px rgba(26, 86, 208, 0.6);
+}
+
+/* Concurso individual */
+.concurso {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.concurso:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.concurso h3 {
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Contenedor para lista de concursos */
+#listaConcursos {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body.concursos_admin {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-crear,
+  .btn-seleccionar {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .concurso {
+    padding: 15px 18px;
+  }
+}
+
+
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}

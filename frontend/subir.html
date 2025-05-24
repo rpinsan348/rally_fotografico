@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Foto - Rally Fotogr&afico</title>
+  <link rel="stylesheet" href="recursos/css/styles.css">
+  <style>
+    main {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #mensaje {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+
+
+  </style>
+</head>
+<body class="subir">
+  <header>
+    
+    <h1 class="titulo-pagina">📄 Subir Fotograf&iacute;a a <span id="concursoNombre">...</span></h1>
+  <div class="info-usuario">
+      <p><strong>👤 Usuario:</strong> <span id="userName">...</span></p>
+    </div>
+
+    <nav>
+      <a href="galeria.html">Galer&iacute;a</a> |
+      <a href="perfil.html">Mi perfil</a> |
+      <a href="mis-fotos.html">Mis fotos</a> |
+      <a href="concursos.html">Concursos</a> |
+<a href="#" id="cerrar_sesion">Cerrar Sesi&oacute;n</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="formSubida" enctype="multipart/form-data">
+      <label for="titulo">T&iacute;tulo:</label>
+      <input type="text" name="titulo" id="titulo" required>
+
+      <label for="descripcion">Descripci&oacute;n:</label>
+      <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+
+      <label for="foto">Seleccionar imagen (jpg, png):</label>
+      <input type="file" name="foto" id="foto" accept=".jpg,.jpeg,.png" required>
+
+      <input type="hidden" id="concurso_id" name="concurso_id">
+
+    
+      <button type="submit">Subir Foto</button>
+      <p id="mensaje"></p>
+    </form>
+  </main>
+
+   <footer>
+        <p>&copy; <span id="year"></span> Rally Fotogr&aacute;fico. Todos los derechos reservados.</p>
+    </footer>
+
+  
+  <script src="recursos/js/subir.js"></script>
+
+</body>
+</html>

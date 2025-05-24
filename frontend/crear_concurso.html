@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Concurso</title>
+  <link rel="stylesheet" href="recursos/css/styles.css">
+
+</head>
+<body class="crear_concurso">
+  <h2>Crear Nuevo Concurso</h2>
+  <form id="formCrearConcurso">
+    <label>Nombre del Concurso:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Descripci&oacute;n:</label>
+    <textarea name="descripcion" required></textarea>
+
+    <label>Fecha de Inicio:</label>
+    <input type="date" name="fecha_inicio" required>
+
+    <label>Fecha de Fin:</label>
+    <input type="date" name="fecha_fin" required>
+
+    <button type="submit">Crear Concurso</button>
+<button type="button" onclick="window.location.href='concursos_admin.html'">⬅️ Volver a Administraci&oacute;n</button>
+  </form>
+
+      <script src="recursos/js/crear_concurso.js"></script>
+
+</body>
+</html>

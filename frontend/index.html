@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rally Fotogr&aacute;fico</title>
+    <link rel="stylesheet" href="recursos/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenido al Concurso Fotogr&aacute;fico</h1>
+        <nav>
+            <ul>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Iniciar sesi&oacute;n</a></li>
+                <li><a href="concursosActivos.html">Concursos Activos</a></li> <!-- Agregado -->
+
+                <li id="adminLink" style="display: none;"><a href="admin.html">Administrar</a></li>
+                <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Cerrar sesi&oacute;n</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Participa en nuestros Concursos Fotogr&aacute;ficos</h2>
+        <p>
+            Bienvenido a la plataforma del Rally Fotogr&aacute;fico. Aqu&iacute; podr&aacute;s registrarte, elegir entre los concursos activos,
+            subir tus fotograf&iacute;as y votar por tus favoritas. ¡Demuestra tu creatividad y compite por ser uno de los ganadores!
+        </p>
+
+        <h3>¿C&oacute;mo Funciona?</h3>
+        <ol>
+            <li>Reg&iacute;strate en <a href="registro.html">este enlace</a> o <a href="login.html">inicia sesi&oacute;n</a> si ya tienes una cuenta.</li>
+            <li>Consulta los concursos activos en la secci&oacute;n <a href="concursosActivos.html">Concursos Activos</a>.</li>
+            <li>Selecciona un concurso para conocer sus detalles y acceder a la galer&iacute;a.</li>
+            <li>Sube tus fotos dentro del plazo indicado. Cada concurso puede tener un n&uacute;mero m&aacute;ximo diferente de im&aacute;genes.</li>
+            <li>Participa en la votaci&oacute;n durante el plazo habilitado.</li>
+        </ol>
+
+        <h3>Galer&iacute;a P&uacute;blica</h3>
+        <p>
+            Puedes ver las fotos participantes en cada concurso a trav&eacute;s de la galer&iacute;a p&uacute;blica accediendo desde cada concurso activo.
+        </p>
+
+        <h3>Sobre los Concursos</h3>
+        <p>
+            Nuestra plataforma organiza diferentes concursos fotogr&aacute;ficos a lo largo del a&ntilde;o. Cada uno tiene su propia tem&aacute;tica, fechas de inicio y fin,
+            plazos de subida y votaci&oacute;n, y reglas particulares como el n&uacute;mero m&aacute;ximo de fotograf&iacute;as permitidas por participante.
+        </p>
+        <p>
+            Todos los detalles espec&iacute;ficos los encontrar&aacute;s dentro de cada concurso. Aseg&uacute;rate de leer la descripci&oacute;n antes de participar.
+        </p>
+
+        <h3>Premios y Reconocimientos</h3>
+        <p>
+            Los concursos pueden ofrecer trofeos, menciones o publicaci&oacute;n de las mejores obras. Revisa los detalles del concurso que te interese para conocer los premios disponibles.
+        </p>
+
+        <h3>Condiciones Generales</h3>
+        <ul>
+            <li>Las fotograf&iacute;as deben respetar la tem&aacute;tica y las reglas del concurso en el que se participa.</li>
+            <li>No se permiten marcas de agua, firmas o elementos que identifiquen al autor en la imagen.</li>
+            <li>Las im&aacute;genes deben ser originales. Las copias o material con derechos de autor ajenos ser&aacute;n descalificadas.</li>
+            <li>La organizaci&oacute;n se reserva el derecho de excluir cualquier contenido que no cumpla las bases.</li>
+        </ul>
+
+       
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Rally Fotogr&aacute;fico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="recursos/js/usuario_autenticacion.js"></script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrar Concursos</title>
+  <link rel="stylesheet" href="recursos/css/styles.css">
+
+</head>
+<body class="concursos_admin">
+
+  <h1>Administrar Concursos</h1>
+<div style="margin-bottom: 20px;">
+  <button class="btn-crear" onclick="window.location.href='crear_concurso.html'">➕ Crear Nuevo Concurso</button>
+  <button class="btn-eliminar" id="btnEliminar">🗑️ Eliminar Concurso</button>
+</div>
+
+<div id="selectorEliminar" style="display:none; margin-bottom: 20px;">
+  <select id="concursoAEliminar">
+    <option value="">-- Selecciona un concurso --</option>
+  </select>
+  <button id="btnConfirmarEliminar">Eliminar</button>
+</div>
+
+
+  <div id="listaConcursos"></div>
+
+    <script src="recursos/js/concursos_admin.js"></script>
+
+
+  
+</body>
+</html>
