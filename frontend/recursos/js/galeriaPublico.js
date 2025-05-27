@@ -5,7 +5,7 @@ if (!concurso || !concurso.id) {
     window.location.href = "index.html"; 
 }
 
-console.log("ID del concurso:", concurso.id); 
+console.log("ID del concurso:", concurso.id);
 
 function votar(fotoId, valor) {
     fetch("../backend/api/votar.php", {
@@ -15,24 +15,28 @@ function votar(fotoId, valor) {
         },
         body: JSON.stringify({ fotoId: fotoId, valor: valor })
     })
-    .then(response => response.json()) 
+    .then(response => response.json())  
     .then(data => {
+        // Si el voto se ha registrado correctamente obtenemos el elemento de la foto para actualizar la interfaz
         if (data.success) {
             const fotoElemento = document.getElementById(`foto_${fotoId}`);
             const votosElemento = fotoElemento.querySelector(".votos");
             const estrellasDiv = fotoElemento.querySelector(".estrellas");
 
+            // Actualizamos el numero de votos
             votosElemento.textContent = `🗳️ Votos: ${parseInt(votosElemento.textContent.split(": ")[1]) + 1}`;
 
+            // Coloreamos las estrellas segun el voto
             const estrellas = estrellasDiv.querySelectorAll(".estrella");
 
+            // Actualizamos las estrellas segun el promedio recibido
             const promedioVoto = data.promedio || 0;
 
             estrellas.forEach((estrella, index) => {
                 if (index < promedioVoto) {
-                    estrella.style.color = "gold"; 
+                    estrella.style.color = "gold";  // Estrella dorada
                 } else {
-                    estrella.style.color = "#ddd"; 
+                    estrella.style.color = "#ddd";  // Estrella gris
                 }
             });
 
@@ -48,7 +52,10 @@ function votar(fotoId, valor) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Volvermos a obtener el concurso
     const concurso = JSON.parse(localStorage.getItem("concurso"));
+
+    // Actualizamos el texto
     if (concurso && concurso.nombre) {
         const concursoNombreSpan = document.getElementById("concursoNombre");
         if(concursoNombreSpan) {
@@ -70,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // Verificamos si esta cerrado
     const concursoCerrado = concurso.estado === "cerrado";
 
     if (concursoCerrado) {
@@ -86,21 +94,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
+                // Mostramos las fotos en la galeria
                 data.fotos.forEach(foto => {
+                    // Creamos un div para cada foto
                     const div = document.createElement("div");
                     div.classList.add("foto-item");
                     div.id = `foto_${foto.id}`;
 
+                    // Creamos div para las estrellas de votacion
                     const estrellasDiv = document.createElement("div");
                     estrellasDiv.classList.add("estrellas");
 
+                    // Creamos 5 estrellas de votacion con eventos click si el concurso no esta cerrado
                     for (let i = 1; i <= 5; i++) {
                         const estrella = document.createElement("span");
                         estrella.classList.add("estrella");
                         estrella.dataset.valor = i;
-                        estrella.textContent = "★";  
+                        estrella.textContent = "★";  // Estrella llena
                         estrella.style.cursor = "pointer";
 
+                        // Añadimos el evento de click para votar si el concurso esta abierto
                         if (!concursoCerrado) {
                             estrella.addEventListener("click", () => votar(foto.id, i));
                         }
@@ -108,10 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         estrellasDiv.appendChild(estrella);
                     }
 
+                    // Coloreamos las estrellas segun el promedio de votos
                     const promedioVoto = foto.promedio || 0;
                     const estrellas = estrellasDiv.querySelectorAll(".estrella");
                     for (let i = 0; i < promedioVoto; i++) {
-                        estrellas[i].style.color = "gold";  
+                        estrellas[i].style.color = "gold";
                     }
 
                     div.innerHTML = `

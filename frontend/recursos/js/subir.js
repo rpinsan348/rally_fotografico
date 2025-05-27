@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formSubida");
   const mensaje = document.getElementById("mensaje");
+
   const user = JSON.parse(localStorage.getItem("user"));
   const concurso = JSON.parse(localStorage.getItem("concurso"));
 
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     concursoNombre.textContent = concurso ? concurso.nombre : "No seleccionado";
   }
 
+  // Cerrar sesion
   const cerrar_sesion  = document.getElementById("cerrar_sesion");
   if (cerrar_sesion ) {
     cerrar_sesion .addEventListener("click", (e) => {
@@ -23,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html";
     });
   }
-
-
 
   if (!user || !user.id) {
     mensaje.textContent = "⚠️ Debes iniciar sesión para subir una foto.";
@@ -43,12 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Obtenemos el archivo seleccionado
     const archivo = document.getElementById("foto").files[0];
     if (!archivo) {
       mostrarMensaje("Debes seleccionar una imagen.", "red");
       return;
     }
 
+    //Validamos el tipo y el tamaño del archivo
     const extensionesPermitidas = ["image/jpeg", "image/png"];
     const maxSizeMB = 5;
 
@@ -62,9 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    //Creamos un FormData con los datos del formulario
     const formDato = new FormData(form);
-    formDato.set("user_id", user.id); 
-    formDato.set("concurso_id", concurso.id); 
+    formDato.set("user_id", user.id); // Nos aseguramos que se envie el ID del usuario
+    formDato.set("concurso_id", concurso.id); // Nos aseguramos que se envie el ID del concurso
 
     console.log("Concurso ID que se enviará:", concurso.id);
 

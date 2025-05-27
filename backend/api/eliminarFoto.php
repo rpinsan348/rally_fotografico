@@ -10,7 +10,7 @@ if (!isset($dato["user_id"], $dato["foto_id"])) {
 }
 
 $user_id = intval($dato["user_id"]);
-$foto_id = intval($datdatoa["foto_id"]);
+$foto_id = intval($dato["foto_id"]);
 
 $stmt = $conexion->prepare("SELECT imagen_url, estado FROM fotografias WHERE id = ? AND usuario_id = ?");
 $stmt->bind_param("ii", $foto_id, $user_id);

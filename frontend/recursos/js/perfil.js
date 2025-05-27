@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombreUsuario = document.getElementById("userName");
     const user = JSON.parse(localStorage.getItem("user"));
 
+  // Mostramos el nombre del usuario
   if (nombreUsuario) {
     nombreUsuario.textContent = user?.nombre || "participante";
   }
 
+  // Cerrar sesion
   if (cerrar_sesion) {
     cerrar_sesion.addEventListener("click", (e) => {
       e.preventDefault();
@@ -32,18 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
         form.email.value = dato.email || "";
       });
   
+    // Habilitamos la edicion al hacer click en el boton
     editarBtn.addEventListener("click", () => {
+      //Permitimos modificar los campos
       form.nombre.removeAttribute("readonly");
       form.email.removeAttribute("readonly");
   
-      editarBtn.style.display = "none";
-      guardarBtn.style.display = "inline-block";
+      editarBtn.style.display = "none"; // Ocultamos el boton editar
+      guardarBtn.style.display = "inline-block"; //Mostramos el boton guardar
     });
   
+    // Guardampos los cambios
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      const password = form.password.value.trim(); 
+      const password = form.password.value.trim(); // Obtenemos el valor de de la nueva contraseña
 
+        // Si hay una contraseña nueva, mostramos la confirmacion
         if (password !== "") {
             const confirmUpdate = confirm("¿Estás seguro de que deseas actualizar tu contraseña?");
             if (!confirmUpdate) {
@@ -51,8 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         
+      //Creamos un FormData con todos los campos del formulario
       const formDato = new FormData(form);
-      formDato.append("id", user.id); 
+      formDato.append("id", user.id); // Enviamos el ID al backend
   
       fetch("../backend/api/editarPerfil.php", {
         method: "POST",
@@ -64,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
           mensaje.style.color = dato.success ? "green" : "red";
   
           if (dato.success) {
+            // Si se ha guardado bien, se bloquean los campos
             form.nombre.setAttribute("readonly", true);
             form.email.setAttribute("readonly", true);
             editarBtn.style.display = "inline-block";

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking - Rally Fotogr&aacute;fico</title>
+  <link rel="stylesheet" href="recursos/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body class="ranking ">
+  <header>
+    <h1>Ranking del Rally Fotográfico</h1>
+    <nav>
+      <a href="index.html">Inicio</a> | 
+      <a href="galeriaPublico.html">Galer&iacute;a</a> | 
+      <a href="concursosActivos.html">Concursos Activos</a> |
+      <a href="login.html">Iniciar sesi&oacute;n</a> |
+      <a href="registro.html">Registrarse</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ranking de Fotograf&iacute;as</h2>
+    <div id="ranking-list"></div>
+    
+    <h2 id="concurso-nombre"></h2>
+  <div id="lista-ranking"></div>
+  
+    <h3>Gr&aacute;fico de Votaciones</h3>
+    <canvas id="graficoVotos"></canvas>
+  </main>
+
+  <script src="recursos/js/ranking.js"></script>
+</body>
+</html>

@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Mostramos el nombre del concurso en la pagina
   nombreConcurso.textContent = concurso.nombre;
 
   document.getElementById("concursoNombre").textContent = concurso.nombre;
 
+  // Mostramos el plazos del concurso
   const fechaInicio = document.getElementById("fechaInicio");
   const fechaFin = document.getElementById("fechaFin");
   const plazoSubida = document.getElementById("plazoSubida");
@@ -49,13 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return isNaN(fechaValida.getTime()) ? "Fecha inválida" : formatearFecha(fechaValida);
   }
 
+  // Cargamos las fotos del concurso
   fetch(`../backend/api/obtenerFotosConcurso.php?concurso_id=${concurso.id}`)
     .then(res => res.json())
     .then(data => {
       if (data.success) {
         const contenedorFotos = document.querySelector(".foto");
-        contenedorFotos.innerHTML = ""; 
+        contenedorFotos.innerHTML = "";
 
+        //Recorremos cada foto
         data.fotos.forEach(foto => {
           const fotoElemento = document.createElement("div");
           fotoElemento.classList.add("foto-item");
@@ -65,12 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const estrellasDiv = document.createElement("div");
           estrellasDiv.classList.add("estrellas");
 
+          // Añadimos 5 estrellas
           for (let i = 1; i <= 5; i++) {
             const estrella = document.createElement("i");
             estrella.classList.add("fa", "fa-star", "estrella");
             estrella.dataset.value = i;
-            estrella.style.cursor = puedeVotar ? "pointer" : "default"; 
+            estrella.style.cursor = puedeVotar ? "pointer" : "default";
 
+            // Si puede votar, permitimos el clic
             if (puedeVotar) {
               estrella.addEventListener("click", () => {
 
@@ -91,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(data => {
                   if (data.success) {
                     alert("✅ Voto registrado con éxito.");
+                    // Actualizamos el numero de votos
                     foto.votos = (parseInt(foto.votos) || 0) + 1;
                     fotoElemento.querySelector(".votos").textContent = `🗳️ Votos: ${foto.votos}`;
                     estrellasDiv.querySelectorAll(".estrella").forEach((e, idx) => {
@@ -112,10 +119,11 @@ document.addEventListener("DOMContentLoaded", () => {
             estrellasDiv.appendChild(estrella);
           }
 
-          const promedio = Math.round(foto.promedio_voto || 0); 
+          // Pintamos las estrellas segun el promedio de votos
+          const promedio = Math.round(foto.promedio_voto || 0);  // Redondeamos el promedio para pintar las estrellas
           const estrellas = estrellasDiv.querySelectorAll(".estrella");
           for (let i = 0; i < promedio; i++) {
-            estrellas[i].style.color = "gold"; 
+            estrellas[i].style.color = "gold";
           }
 
           fotoElemento.innerHTML = `
@@ -141,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mensaje.style.color = "red";
     });
 
+  // Funcion para cerrar sesión
   const cerrar_sesion = document.getElementById("cerrar_sesion");
   if (cerrar_sesion) {
     cerrar_sesion.addEventListener("click", (e) => {

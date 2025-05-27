@@ -23,21 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => response.text()) 
+        .then(response => response.text())  // Obtenemos la respuesta como texto
         .then(text => {
             console.log("Respuesta del servidor:", text); 
 
             try {
-                const dato = JSON.parse(text); 
+                const dato = JSON.parse(text);  // Intentamos convertir la respuesta a JSON
                 if (dato.success) {
                     mensaje.style.color = "green";
                     mensaje.textContent = "✅ Login exitoso. Redirigiendo...";
 
+                    // Guardamos el usuario en el localStorage
                     localStorage.setItem("user", JSON.stringify(dato.user));
 
-                    const rol = dato.user.rol 
-                    console.log("Rol del usuario en login.js:", rol); 
+                    // Detectamos el rol del usuario
+                    const rol = dato.user.rol;
+                    console.log("Rol del usuario en login.js:", rol);
 
+                    // Despues de 2 segundos redirigimos segun el rol
                     setTimeout(() => {
                         if (rol === "admin") {
                             window.location.href = "concursos_admin.html";
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, 2000);
                 } else {
                     mensaje.style.color = "red";
-                    mensaje.textContent = "❌ " + dato.message;  
+                    mensaje.textContent = "❌ " + dato.message;
                 }
             } catch (error) {
                 console.log("Error en la autenticación:", error);

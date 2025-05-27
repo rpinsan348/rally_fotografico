@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
 
+    // Si el formulario existe se añade un evento submit
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -17,13 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dato = await respuesta.json();
                 console.log("Respuesta del servidor:", dato);
 
+                //Si el login ha sido exitoso guarda los datos de usuario en el localStorage
                 if (dato.success) {
                     localStorage.setItem("user", JSON.stringify(dato.user));
                     alert("Bienvenido, " + dato.user.nombre);
 
+                    //Obtenemos el rol de usuario
                     const role = dato.user.rol;
                     console.log("Rol del usuario:", role);
 
+                    //Segun el rol del usuario te lleva a distointas paginas
                     if (role === "admin") {
                         window.location.replace("admin.html");
                     } else {
@@ -41,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// Función para cerrar sesión
 function cerrar_sesion() {
+    //Elimina el usuario guardado en el localStorage
     localStorage.removeItem("user");
     alert("Sesión cerrada.");
     window.location.replace("index.html");

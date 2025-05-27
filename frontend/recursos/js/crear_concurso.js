@@ -2,6 +2,7 @@ document.getElementById("formCrearConcurso").addEventListener("submit", function
   e.preventDefault();
 
   const formDato = new FormData(this);
+  //Convertimos el FormData en un objeto de JavaScript
   const data = Object.fromEntries(formDato.entries());
 
   fetch("../backend/api/crearConcurso.php", {
@@ -13,6 +14,7 @@ document.getElementById("formCrearConcurso").addEventListener("submit", function
   })
   .then(res => res.json())
   .then(respuesta => {
+    //Si la respuesta es exitosa se muestra el mensaje al usuario y se redirige
     if (respuesta.success) {
       alert("Concurso creado con éxito");
       window.location.href = "concursos_admin.html";

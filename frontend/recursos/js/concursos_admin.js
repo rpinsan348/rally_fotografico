@@ -1,6 +1,8 @@
+// Variable en la que vamos a almacenar los concursos
 let concursosGlobal = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Obtenemos la lista de los concursos
   fetch("../backend/api/obtenerConcursos.php")
     .then(res => res.json())
     .then(dato => {
@@ -10,8 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedor.innerHTML = "<p>No hay concursos registrados.</p>";
         return;
       }
+      // Guardamos los concursos
       concursosGlobal = dato.concursos;
 
+      //Los recorremos y creamos elementos HTML para cada uno de ellos
       dato.concursos.forEach(concurso => {
         const div = document.createElement("div");
         div.className = "concurso";
@@ -26,10 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedor.appendChild(div);
       });
 
+      // Añadimos eventos a los botones de Gestionar
       document.querySelectorAll(".btn-seleccionar").forEach(btn => {
         btn.addEventListener("click", () => {
           const id = btn.getAttribute("data-id");
-          seleccionarConcurso(id);
+          seleccionarConcurso(id); //Llamamos a la funcion para elimimnar el concurso que hemos seleccionado
         });
       });
     })
@@ -38,11 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("listaConcursos").textContent = "No se pudieron cargar los concursos.";
     });
 
+  // Evento para el boton de mostrar selector para eliminar
   const btnEliminar = document.getElementById("btnEliminar");
   if (btnEliminar) {
     btnEliminar.addEventListener("click", mostrarSelectorEliminar);
   }
 
+  // Evento para el boton de confirmar eliminacion
   const btnConfirmarEliminar = document.getElementById("btnConfirmarEliminar");
   if (btnConfirmarEliminar) {
     btnConfirmarEliminar.addEventListener("click", confirmarEliminacion);
@@ -54,17 +61,21 @@ function seleccionarConcurso(id) {
   window.location.href = "admin.html";
 }
 
+// Ocultar o mostrar el selector para eliminar
 function mostrarSelectorEliminar() {
   const selector = document.getElementById("selectorEliminar");
   const select = document.getElementById("concursoAEliminar");
 
+  // Si esta visible, lo oculta
   if (selector.style.display === "block") {
     selector.style.display = "none";
     return;
   }
 
+  // Si no está visible, lo muestra y carga las opciones
   select.innerHTML = `<option value="">-- Selecciona un concurso --</option>`;
 
+  // Rellenamos el select
   concursosGlobal.forEach(concurso => {
     const option = document.createElement("option");
     option.value = concurso.id;
@@ -94,6 +105,7 @@ function confirmarEliminacion() {
       if (data.success) {
         alert("Concurso eliminado correctamente.");
 
+        // Eliminamos el concurso de la lista
         const lista = document.getElementById("listaConcursos");
         const items = lista.querySelectorAll(".concurso");
 
@@ -104,13 +116,16 @@ function confirmarEliminacion() {
           }
         });
 
+        // Eliminamos del selector
         const optionToRemove = document.querySelector(`#concursoAEliminar option[value="${id}"]`);
         if (optionToRemove) {
           optionToRemove.remove();
         }
 
+        // Actualizamos el array
         concursosGlobal = concursosGlobal.filter(concurso => concurso.id !== parseInt(id));
 
+        // Ocultamos el selector
         document.getElementById("selectorEliminar").style.display = "none";
       } else {
         alert("Error al eliminar el concurso.");

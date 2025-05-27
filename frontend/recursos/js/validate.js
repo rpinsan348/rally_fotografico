@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        // Validación frontend
         const email = form.email.value.trim();
         const password = form.password.value;
         const confirmarContrasena = form.confirmar_contrasena ? form.confirmar_contrasena.value : password;
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        //Si pasa las validaciones, se crea un formDato con los datos del formulario
         const formDato = new FormData(form);
         fetch("../backend/api/registro.php", {
             method: "POST",
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (datos.success) {
                 mensaje.style.color = "green";
                 mensaje.textContent = "✅ Registro exitoso. Redirigiendo...";
+                //Despues de 2 segundos redirige a la pagina de login
                 setTimeout(() => {
                     window.location.href = "login.html";
                 }, 2000);
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    //Validamos el formato del email
     function validarEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
