@@ -64,10 +64,10 @@ const user = JSON.parse(localStorage.getItem("user"));
                         maxTamanoFoto
                     })
                 });
-                const dato = await resultado.json();
-                console.log("Respuesta del servidor:", dato);
+                const data = await resultado.json();
+                console.log("Respuesta del servidor:", data);
 
-                if (dato.success) {
+                if (data.success) {
                     alert("Configuración guardada correctamente.");
                 } else {
                     alert("Error al guardar la configuración.");
@@ -89,16 +89,16 @@ const user = JSON.parse(localStorage.getItem("user"));
 async function getConfiguracionRally(concurso_id) {
     try {
         const resultado = await fetch(`../backend/api/get_configuracion_rally.php?concurso_id=${concurso_id}`);
-        const dato = await resultado.json();
-        if (dato.success) {
-            document.getElementById("nombre").value = dato.config.nombre;
-            document.getElementById("descripcion").value = dato.config.descripcion;
-            document.getElementById("fechaInicio").value = formatearFecha(dato.config.fecha_inicio); //Fecha formateada
-            document.getElementById("fechaFin").value = formatearFecha(dato.config.fecha_fin);
-            document.getElementById("plazoRecepcion").value = formatearFecha(dato.config.plazo_subida);
-            document.getElementById("limiteFotos").value = dato.config.max_fotos;
-            document.getElementById("plazoVotacion").value = formatearFecha(dato.config.plazo_votacion);
-            document.getElementById("maxTamanoFoto").value = dato.config.max_tamano_foto;
+        const data = await resultado.json();
+        if (data.success) {
+            document.getElementById("nombre").value = data.config.nombre;
+            document.getElementById("descripcion").value = data.config.descripcion;
+            document.getElementById("fechaInicio").value = formatearFecha(data.config.fecha_inicio); //Fecha formateada
+            document.getElementById("fechaFin").value = formatearFecha(data.config.fecha_fin);
+            document.getElementById("plazoRecepcion").value = formatearFecha(data.config.plazo_subida);
+            document.getElementById("limiteFotos").value = data.config.max_fotos;
+            document.getElementById("plazoVotacion").value = formatearFecha(data.config.plazo_votacion);
+            document.getElementById("maxTamanoFoto").value = data.config.max_tamano_foto;
 
         }
     } catch (error) {
@@ -123,10 +123,10 @@ async function usuarios(concurso_id) {
 
     try {
         const resultado  = await fetch(`../backend/api/usuarios.php?concurso_id=${concurso_id}`);
-        const dato = await resultado.json();
+        const data = await resultado.json();
 
-        if (dato.success) {
-            dato.usuarios.forEach(user => {
+        if (data.success) {
+            data.usuarios.forEach(user => {
                 if (user.estado === "pendiente") {
                     const row = pendientesTabla.insertRow();
                     row.innerHTML = `
@@ -183,8 +183,8 @@ async function aprobarCuentaUsuario(email, concurso_id) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })
             });
-            const dato = await resultado.json();
-            if (dato.success) {
+            const data = await resultado.json();
+            if (data.success) {
                 alert("Usuario aprobado.");
                 usuarios(concurso_id);
             } else {
@@ -200,11 +200,11 @@ async function aprobarCuentaUsuario(email, concurso_id) {
 async function obtenerUsuarioPorEmail(email) {
     try {
         const resultado  = await fetch(`../backend/api/obtener_usuario_por_email.php?email=${encodeURIComponent(email)}`);
-        const dato = await resultado.json();
-        if (dato.success) {
-            return dato.user;
+        const data = await resultado.json();
+        if (data.success) {
+            return data.user;
         } else {
-            console.warn("Usuario no encontrado:", dato.message);
+            console.warn("Usuario no encontrado:", data.message);
             return null;
         }
     } catch (error) {
@@ -222,8 +222,8 @@ async function rechazarCuentasPendientes(email, concurso_id) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })
             });
-            const dato = await resultado.json();
-            if (dato.success) {
+            const data = await resultado.json();
+            if (data.success) {
                 alert("Usuario rechazado.");
                 usuarios(concurso_id);
             } else {
@@ -243,8 +243,8 @@ async function actualizarRolUsuario(email, concurso_id) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, newRole: "participante" })
         });
-        const dato = await resultado.json();
-        if (dato.success) {
+        const data = await resultado.json();
+        if (data.success) {
             alert("Rol cambiado a 'participante'.");
         } else {
             alert("Error al cambiar el rol.");
@@ -259,16 +259,16 @@ async function actualizarRolUsuario(email, concurso_id) {
 async function estadisticas(concurso_id) {
     try {
         const resultado  = await fetch(`../backend/api/estadisticas.php?concurso_id=${concurso_id}`);
-        const dato = await resultado.json();
-        console.log("Estadísticas cargadas:", dato);
+        const data = await resultado.json();
+        console.log("Estadísticas cargadas:", data);
         const contenedor = document.getElementById("estadisticas");
-        if (dato.success) {
+        if (data.success) {
             contenedor.innerHTML = `
                 <h3>Resumen General</h3>
-                <p><strong>Total de fotos subidas:</strong> ${dato.total_fotos}</p>
-                <p><strong>Fotos admitidas:</strong> ${dato.admitidas}</p>
-                <p><strong>Fotos rechazadas:</strong> ${dato.rechazadas}</p>
-                <p><strong>Participantes que han subido fotos:</strong> ${dato.participantes_activos}</p>
+                <p><strong>Total de fotos subidas:</strong> ${data.total_fotos}</p>
+                <p><strong>Fotos admitidas:</strong> ${data.admitidas}</p>
+                <p><strong>Fotos rechazadas:</strong> ${data.rechazadas}</p>
+                <p><strong>Participantes que han subido fotos:</strong> ${data.participantes_activos}</p>
             `;
         } else {
             contenedor.innerHTML = "<p>Error al obtener estadísticas generales.</p>";
@@ -314,19 +314,19 @@ async function estadisticas(concurso_id) {
             // Creamos el grafico nuevo
             graficoVotos = new Chart(grafico, {
                 type: 'bar',
-                dato: {
+                data: {
                     labels: etiquetas,
                     datasets: [
                         {
                             label: 'Votos',
-                            dato: votos,
+                            data: votos,
                             backgroundColor: 'rgba(54, 162, 235, 0.5)',
                             borderColor: 'rgba(54, 162, 235, 1)',
                             borderWidth: 1
                         },
                         {
                             label: 'Promedio de Voto',
-                            dato: promedios,
+                            data: promedios,
                             backgroundColor: 'rgba(255, 206, 86, 0.5)',
                             borderColor: 'rgba(255, 206, 86, 1)',
                             borderWidth: 1
@@ -369,8 +369,8 @@ async function actualizarUsuario(nombre, email, rol, concurso_id) {
                     nuevoRol
                 })
             });
-            const dato = await resultado.json();
-            if (dato.success) {
+            const data = await resultado.json();
+            if (data.success) {
                 alert("Usuario actualizado correctamente.");
                 usuarios(concurso_id);
             } else {
@@ -392,8 +392,8 @@ async function borrarUsuario(email, concurso_id) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })
             });
-            const dato = await resultado.json();
-            if (dato.success) {
+            const data = await resultado.json();
+            if (data.success) {
                 alert("Usuario eliminado.");
                 usuarios(concurso_id);
             } else {
@@ -414,8 +414,8 @@ async function actualizar_Role(email, concurso_id) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, newRole })
             });
-            const dato = await resultado.json();
-            if (dato.success) {
+            const data = await resultado.json();
+            if (data.success) {
                 alert("Rol actualizado.");
                 usuarios(concurso_id);
             } else {
@@ -433,12 +433,12 @@ async function actualizar_Role(email, concurso_id) {
 async function fotos(concurso_id) {
     try {
         const resultado = await fetch(`../backend/api/foto.php?concurso_id=${concurso_id}`);
-        const dato = await resultado.json();
-        if (dato.success) {
+        const data = await resultado.json();
+        if (data.success) {
             const fotosTable = document.getElementById("fotosTable").getElementsByTagName("tbody")[0];
             fotosTable.innerHTML = "";
 
-            dato.fotos.forEach(foto => {
+            data.fotos.forEach(foto => {
                 const row = fotosTable.insertRow();
                 row.innerHTML = `
                     <td><img src="${foto.url}" alt="Foto" width="100"></td>
@@ -464,8 +464,8 @@ async function validarFoto(id, estado, concurso_id) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id, estado })
         });
-        const dato = await resultado.json();
-        if (dato.success) {
+        const data = await resultado.json();
+        if (data.success) {
             alert(`Foto ${estado} correctamente.`);
             fotos(concurso_id); 
             estadisticas(concurso_id);

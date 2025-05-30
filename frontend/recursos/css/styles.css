@@ -1,34 +1,29 @@
-/* Importar una fuente moderna desde Google Fonts */
+/* Importarmos una fuente moderna desde Google */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
-/* GLOBAL */
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    /*background-color: #f0f2f5;*/
-        background: linear-gradient(135deg, #e0eafc, #cfdef3);
-
+    background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Ponemos un findo degradado */
     color: #333;
 }
 
-/* HEADER */
 header {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra para la profundidad*/
 }
 
 header h1 {
     margin: 0;
     font-size: 42px;
-    font-weight: 700;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    font-weight: 700; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Sombra para el texto */
 }
 
-/* NAVBAR */
 nav ul {
     display: flex;
     justify-content: center;
@@ -56,7 +51,6 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* MAIN CONTENT */
 section {
     max-width: 1000px;
     margin: 40px auto;
@@ -87,7 +81,6 @@ section p {
     color: #555;
 }
 
-/* LISTAS */
 ol, ul {
     margin-left: 25px;
     padding-left: 10px;
@@ -100,7 +93,6 @@ ol li, ul li {
     line-height: 1.6;
 }
 
-/* LINKS */
 a {
     color: #ff7e5f;
     font-weight: 600;
@@ -111,104 +103,98 @@ a:hover {
     text-decoration: underline;
 }
 
-/* FOOTER */
 footer {
-     background-color: #1f2937; /* Un gris muy oscuro, elegante */
-    color: #f3f4f6; /* Texto claro y suave */
+    background-color: #1f2937; 
+    color: #f3f4f6; 
     text-align: center;
     padding: 30px 20px;
     font-size: 16px;
     margin-top: 60px;
-    border-top: 3px solid #ff7e5f; /* Línea superior naranja para destacar */
-    box-shadow: 0 -3px 10px rgba(0,0,0,0.3); /* Sombra sutil arriba */
+    border-top: 3px solid #ff7e5f; 
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.3); 
     font-family: 'Nunito', sans-serif;
-     position: relative;
+    position: relative;
     bottom: 0;
     width: 100%;
     margin-top: auto;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
 }
 
-/* Enlaces dentro del footer (por si agregas) */
 footer a {
-    color: #ff7e5f;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0 8px;
-    transition: color 0.3s ease;
+  color: #ff7e5f;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #ffb997;
-    text-decoration: underline;
+  color: #ffb997;
+  text-decoration: underline;
 }
 
-/* Opcional: estructura para links o iconos */
 footer .footer-links {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 footer .footer-links a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 18px;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
 }
 
 #year {
-     font-weight: 700;
-    color: #ff7e5f;
+  font-weight: 700;
+  color: #ff7e5f;
 }
 
-/* BOTONES (genérico) */
 button, .boton-votar {
-    background: #ff7e5f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  background: #ff7e5f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover, .boton-votar:hover {
-    background: #eb674e;
+  background: #eb674e;
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-/* MENSAJE DINÁMICO */
 #mensaje {
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
 }
 
-/* CONCURSOS LISTA */
 #listaConcursos {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 #listaConcursos p {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
 }
 
 
 section {
-    animation: fadeInUp 0.8s ease both;
+  animation: fadeInUp 0.8s ease both;
 }
 
 @keyframes fadeInUp {
@@ -222,127 +208,121 @@ section {
     }
 }
 
-
-
-/* === LOGIN PAGE === */
-
+/* LOGIN */
 body.login-page {
-   background: linear-gradient(135deg, #6a11cb, #2575fc);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .login-container {
-    background-color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    animation: fadeInUp 0.8s ease both;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease both;
 }
 
 .login-container h2 {
-    color: #2c3e50;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .form-group label {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #34495e;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #34495e;
 }
 
 .form-group input[type="email"],
 .form-group input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
-    border-color: #2575fc;
-    outline: none;
+  border-color: #2575fc;
+  outline: none;
 }
 
 .login-container button {
-    background-color: #ff7e5f;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #ff7e5f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .login-container button:hover {
-    background-color: #eb674e;
+  background-color: #eb674e;
 }
 
-/* Botón de volver al inicio */
 .back-button {
-    margin-top: 15px;
-    background-color: #34495e;
-    color: white;
-    font-weight: 600;
-    padding: 10px 15px;
-    width: 100%;
+  margin-top: 15px;
+  background-color: #34495e;
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+  width: 100%;
 }
 
 .back-button:hover {
-    background-color: #2c3e50;
+  background-color: #2c3e50;
 }
 
-/* Mensajes */
 .login-container p {
-    font-size: 14px;
-    margin-top: 15px;
-    color: #555;
+  font-size: 14px;
+  margin-top: 15px;
+  color: #555;
 }
 
 .login-container a {
-    color: #ff7e5f;
-    font-weight: 600;
-    text-decoration: none;
+  color: #ff7e5f;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .login-container a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #mensaje {
-    text-align: center;
-    color: #d9534f;
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 15px;
+  text-align: center;
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 15px;
 }
 
 
 
-/* === REGISTRO PAGE === */
-
+/* REGISTRO */
 body.registro-page {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     display: flex;
@@ -353,7 +333,6 @@ body.registro-page {
     padding: 0;
 }
 
-/* El contenedor del registro (div general) */
 body.registro-page > div {
     background-color: #ffffff;
     padding: 40px 30px;
@@ -365,7 +344,6 @@ body.registro-page > div {
     animation: fadeInUp 0.8s ease both;
 }
 
-/* Título */
 body.registro-page h2 {
     color: #2c3e50;
     font-size: 28px;
@@ -373,7 +351,6 @@ body.registro-page h2 {
     margin-bottom: 25px;
 }
 
-/* Campos del formulario */
 body.registro-page form {
     text-align: left;
 }
@@ -406,7 +383,6 @@ body.registro-page select:focus {
     outline: none;
 }
 
-/* Botón principal */
 body.registro-page button[type="submit"] {
     background-color: #ff7e5f;
     color: white;
@@ -424,7 +400,6 @@ body.registro-page button[type="submit"]:hover {
     background-color: #eb674e;
 }
 
-/* Botón de volver */
 body.registro-page .back-button {
     margin-top: 15px;
     background-color: #34495e;
@@ -442,7 +417,6 @@ body.registro-page .back-button:hover {
     background-color: #2c3e50;
 }
 
-/* Mensaje de error */
 body.registro-page #mensaje {
     text-align: center;
     color: #d9534f;
@@ -452,12 +426,9 @@ body.registro-page #mensaje {
 }
 
 
-
-/* === CONCURSOS ACTIVOS PAGE === */
-
+/* CONCURSOS ACTIVOS */
 body.concursosActivos {
-    /*background: #bcbcd6; */ /* Fondo suave claro para el body */
-        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     margin: 0;
     padding: 0;
     font-family: 'Nunito', sans-serif;
@@ -468,16 +439,15 @@ body.concursosActivos {
 }
 
 body.concursosActivos .contenido {
-    flex: 1; /* Esto empuja el footer hacia abajo */
+    flex: 1; 
 }
 
-/* Header visual consistente */
 body.concursosActivos header {
-    background-color: #2c3e50;  /* Fondo oscuro para distinguirlo del body */
+    background-color: #2c3e50;  
     color: #fff;
     padding: 40px 20px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Agregar sombra para separación */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.concursosActivos header h1 {
@@ -487,7 +457,6 @@ body.concursosActivos header h1 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Navbar */
 body.concursosActivos nav ul {
     display: flex;
     justify-content: center;
@@ -515,9 +484,8 @@ body.concursosActivos nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main content section */
 body.concursosActivos section {
-    background-color: #ffffff;  /* Fondo blanco para el contenido principal */
+    background-color: #ffffff; 
     max-width: 1000px;
     margin: 40px auto;
     padding: 40px;
@@ -533,7 +501,6 @@ body.concursosActivos section h2 {
     text-align: center;
 }
 
-/* Listas de concursos */
 #listaConcursosActivos,
 #listaConcursosCerrados {
     margin-top: 20px;
@@ -546,15 +513,14 @@ body.concursosActivos section h2 {
     text-align: center;
 }
 
-/* Footer */
 body.concursosActivos footer {
-    background-color: #34495e;  /* Fondo oscuro similar al header */
+    background-color: #34495e; 
     color: white;
     text-align: center;
     padding: 30px 20px;
     font-size: 16px;
     margin-top: 60px;
-    border-top: 2px solid #ffcc70;  /* Línea divisoria en la parte superior del footer */
+    border-top: 2px solid #ffcc70; 
 }
 
 body.concursosActivos footer p {
@@ -563,7 +529,7 @@ body.concursosActivos footer p {
 
 #year {
     font-weight: bold;
-    color: #ffcc70;  /* Resaltar el año con un color dorado */
+    color: #ffcc70;  
 }
 
 body.concursosActivos footer a {
@@ -576,7 +542,6 @@ body.concursosActivos footer a:hover {
     text-decoration: underline;
 }
 
-/* Animación */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -589,12 +554,11 @@ body.concursosActivos footer a:hover {
 }
 
 
-/* === GALERÍA PÚBLICA PAGE === */
-
+/* GALERÍA PÚBLICA */
 body.galeriaPublico {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Altura mínima 100% viewport */
+    min-height: 100vh; 
     background: linear-gradient(135deg, #e0eafc, #cfdef3);
     font-family: 'Nunito', sans-serif;
     margin: 0;
@@ -602,7 +566,6 @@ body.galeriaPublico {
     color: #ff7e5f;
 }
 
-/* Header */
 body.galeriaPublico header {
     background-color: #2c3e50;
     color: #fff;
@@ -637,9 +600,8 @@ body.galeriaPublico nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main section */
 body.galeriaPublico main {
-    flex: 1 0 auto; /* Permite que main crezca */
+    flex: 1 0 auto;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
@@ -658,7 +620,7 @@ body.galeriaPublico main p {
     margin-bottom: 30px;
 }
 body.galeriaPublico footer {
-    flex-shrink: 0; /* Evita que el footer se encoja */
+    flex-shrink: 0;
     background-color: #2c3e50;
     color: #fff;
     padding: 15px 20px;
@@ -667,7 +629,6 @@ body.galeriaPublico footer {
 }
 
 
-/* Galería */
 .galeria-container {
     display: flex;
     flex-wrap: wrap;
@@ -713,7 +674,6 @@ body.galeriaPublico footer {
     color: #000;
 }
 
-/* Botón de votar */
 .boton-votar {
     background-color: #ff7e5f;
     color: white;
@@ -735,7 +695,6 @@ body.galeriaPublico footer {
     cursor: not-allowed;
 }
 
-/* Mensaje */
 #mensaje {
     text-align: center;
     margin-top: 20px;
@@ -744,11 +703,9 @@ body.galeriaPublico footer {
 }
 
 
-/* === GALERÍA CONCURSO PAGE === */
-
+/* GALERÍA CONCURSO */
 body.galeriaConcurso {
-    /*background: linear-gradient(to right, #e0eafc, #f9f9f9);*/
-        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     font-family: 'Nunito', sans-serif;
     color: #2c3e50;
     margin: 0;
@@ -758,7 +715,6 @@ body.galeriaConcurso {
     min-height: 100vh;
 }
 
-/* Header */
 body.galeriaConcurso header {
     background-color: #2c3e50;
     color: #fff;
@@ -774,7 +730,6 @@ body.galeriaConcurso header h1 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Usuario y concurso */
 .info-usuario {
     font-size: 16px;
     margin-top: 10px;
@@ -785,7 +740,6 @@ body.galeriaConcurso header h1 {
     margin: 4px 0;
 }
 
-/* Nav */
 body.galeria nav {
     margin-top: 15px;
 }
@@ -803,7 +757,6 @@ body.galeria nav a:hover {
     color: #f39c12;
 }
 
-/* Main */
 body.galeria main {
     flex: 1;
     max-width: 1000px;
@@ -820,17 +773,14 @@ body.galeria main h2 {
     color: #2c3e50;
 }
 
-
-/* Contenedor general de fotos */
 .foto {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding-bottom: 30px;  /* para que no quede pegado al footer */
+  padding-bottom: 30px;  
 }
 
-/* Cada foto individual */
 .foto-item {
   flex: 0 1 280px;
   background-color: #fff;
@@ -853,13 +803,11 @@ body.galeria main h2 {
 }
 
 
-
 #nombreConcurso {
     color: #ff7e5f;
     font-weight: bold;
 }
 
-/* Plazos */
 .plazos-concurso {
     background: #ecf0f1;
     border-radius: 10px;
@@ -900,11 +848,10 @@ body.galeria main h2 {
     font-weight: 600;
 }
 
-/* Galería */
 .foto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* columnas más estrechas */
-    gap: 10px;  /* antes era 20px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 10px;  
     padding: 10px 0;
 }
 
@@ -921,7 +868,6 @@ body.galeria main h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Mensaje */
 #mensaje {
     text-align: center;
     font-size: 18px;
@@ -930,7 +876,6 @@ body.galeria main h2 {
     margin-top: 30px;
 }
 
-/* Footer */
 body.galeriaConcurso footer {
     background-color: #2c3e50;
     color: white;
@@ -967,33 +912,29 @@ body.galeriaConcurso footer a:hover {
         margin: 40px auto;
         padding: 0 20px;
         flex: 1;
-
     }
 
 
-
-
-    .estrellas {
-    font-size: 30px;  /* Tamaño de las estrellas */
+  .estrellas {
+    font-size: 30px;  
     display: flex;
     justify-content: center;
-    gap: 5px;  /* Espaciado entre las estrellas */
+    gap: 5px;  
 }
 
 .estrellas .estrella {
-    color: #ddd;  /* Color predeterminado de la estrella (gris claro) */
+    color: #ddd;  
     cursor: pointer;
 }
 
 .estrellas .estrella:hover {
-    color: gold;  /* Color de la estrella cuando se pasa el ratón por encima */
+    color: gold;
 }
 
 
-/* === CONCURSOS PAGE === */
+/* CONCURSOS */
 body.concursosPage {
-    /*background: linear-gradient(135deg, #e0eafc, #cfdef3);*/
-        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
@@ -1058,7 +999,6 @@ body.concursosPage #mensaje {
     font-size: 16px;
 }
 
-/* Animación */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1070,9 +1010,6 @@ body.concursosPage #mensaje {
     }
 }
 
-
-
-/*Galeria*/
 body.galeria {
     background: linear-gradient(to right, #e0eafc, #f9f9f9);
     font-family: 'Nunito', sans-serif;
@@ -1183,17 +1120,13 @@ body.galeria main h2 {
     font-weight: 600;
 }
 
-/* Galería de fotos */
 .foto {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   padding-bottom: 30px; 
-    /*display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    padding: 20px 0;*/
+
 }
 
 .foto img {
@@ -1209,7 +1142,6 @@ body.galeria main h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Estrellas para votación */
 .estrellas {
     font-size: 28px;
     display: flex;
@@ -1228,7 +1160,6 @@ body.galeria main h2 {
     color: gold;
 }
 
-/* Mensaje dinámico */
 #mensaje {
     text-align: center;
     font-size: 18px;
@@ -1237,7 +1168,6 @@ body.galeria main h2 {
     margin-top: 30px;
 }
 
-/* Footer */
 body.galeria footer {
     background-color: #2c3e50;
     color: white;
@@ -1273,16 +1203,9 @@ body.galeria footer a:hover {
   gap: 20px;
   justify-content: center;
   padding-bottom: 30px; 
-  /*display: grid;*/ /* o flex, si prefieres */
-  /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;*/
 }
 
 
-
-
-/* Animación de entrada */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1296,11 +1219,11 @@ body.galeria footer a:hover {
 
 
 
-/* === PERFIL PAGE === */
+/* PERFIL */
 body.perfil {
      display: flex;
     flex-direction: column;
-    min-height: 100vh;  /* para que el body ocupe toda la pantalla */
+    min-height: 100vh;  
     background: linear-gradient(135deg, #e0eafc, #cfdef3);
     background-color: #f4f4f9;
     font-family: 'Nunito', sans-serif;
@@ -1310,7 +1233,7 @@ body.perfil {
 body.perfil main {
     max-width: 600px;
     width: 100%;
-    margin: 60px auto 0;  /* margen arriba y auto horizontal para centrar */
+    margin: 60px auto 0; 
     padding: 30px;
     background: white;
     border-radius: 12px;
@@ -1413,7 +1336,7 @@ body.perfil footer {
     margin-top: 60px;
     box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
     font-size: 16px;
-        margin-top: auto; /* Empuja el footer hacia abajo */
+    margin-top: auto; 
 
 }
 
@@ -1428,13 +1351,8 @@ body.perfil #year {
 }
 
 
-
-
-
-/* Estilos para la página Subir Foto */
 body.subir {
- /* background: linear-gradient(to right, #e0eafc, #f9f9f9);*/
-     background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
   font-family: 'Nunito', sans-serif;
   color: #2c3e50;
   margin: 0;
@@ -1544,7 +1462,6 @@ body.subir #mensaje {
   color: #e74c3c;
 }
 
-/* Footer */
 body.subir footer {
   background-color: #2c3e50;
   color: white;
@@ -1566,10 +1483,8 @@ body.subir footer #year {
 }
 
 
-/* Estilos para la página Mis Fotos */
 body.mis-fotos {
-  /*background: linear-gradient(to right, #f8fafc, #e9eff5);*/
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
   font-family: 'Nunito', sans-serif;
   color: #2c3e50;
   margin: 0;
@@ -1688,7 +1603,6 @@ body.mis-fotos #mensaje {
   color: #e74c3c;
 }
 
-/* Footer */
 body.mis-fotos footer {
   background-color: #2c3e50;
   color: white;
@@ -1713,8 +1627,7 @@ body.mis-fotos footer #year {
 body.crear_concurso {
   font-family: 'Nunito', sans-serif;
   padding: 40px 20px;
-  /*background-color: #f0f2f5;*/ /* Fondo general como en el body global */
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1724,7 +1637,7 @@ body.crear_concurso {
 
 body.crear_concurso h2 {
   text-align: center;
-  color: #2575fc; /* Azul del header/nav para títulos */
+  color: #2575fc;
   font-weight: 700;
   margin-bottom: 30px;
   font-size: 28px;
@@ -1746,7 +1659,7 @@ body.crear_concurso form label {
   display: block;
   font-weight: 600;
   margin-top: 15px;
-  color: #34495e; /* Texto oscuro gris */
+  color: #34495e;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -1766,12 +1679,12 @@ body.crear_concurso form textarea {
 
 body.crear_concurso form input:focus,
 body.crear_concurso form textarea:focus {
-  border-color: #2575fc; /* Azul para foco, acorde con header */
+  border-color: #2575fc;
   outline: none;
 }
 
 body.crear_concurso form button {
-  background-color: #ff7e5f; /* Color principal botones */
+  background-color: #ff7e5f;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -1786,12 +1699,10 @@ body.crear_concurso form button {
 }
 
 body.crear_concurso form button:hover {
-  background-color: #eb674e; /* Hover más oscuro del naranja */
+  background-color: #eb674e;
 }
 
 
-/*Admin*/
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1799,16 +1710,13 @@ body.crear_concurso form button:hover {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo y contenedor general */
 body.admin {
-  /*background: #f5f7fa;*/
 background: linear-gradient(135deg, #e0eafc, #cfdef3);
   color: #ff7e5f;
   line-height: 1.5;
   padding: 20px;
 }
 
-/* Header */
 header {
   background-color: #004080;
   color: #fff;
@@ -1833,7 +1741,6 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* Main sections */
 main section {
   background: #fff;
   padding: 25px 30px;
@@ -1850,7 +1757,6 @@ main section h2 {
   padding-bottom: 8px;
 }
 
-/* Formulario Configuración Rally */
 form#configRallyForm label {
   display: block;
   font-weight: 600;
@@ -1898,7 +1804,6 @@ form#configRallyForm button[type="submit"]:hover {
   background-color: #0059b3;
 }
 
-/* Tablas: Usuarios, Usuarios Pendientes, Fotos */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -1929,7 +1834,6 @@ table tbody td {
   padding: 12px 15px;
 }
 
-/* Acciones: botones o enlaces dentro de tablas */
 table tbody td .btn {
   background-color: #0073e6;
   color: white;
@@ -1949,7 +1853,6 @@ table tbody td .btn:hover {
   background-color: #0059b3;
 }
 
-/* Sección Estadísticas y Resultados */
 #estadisticas,
 #ranking-list {
   margin-bottom: 20px;
@@ -1957,7 +1860,6 @@ table tbody td .btn:hover {
   color: #333;
 }
 
-/* Canvas del gráfico */
 #graficoVotos {
   display: block;
   max-width: 100%;
@@ -1967,7 +1869,6 @@ table tbody td .btn:hover {
   background-color: #fff;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
   form#configRallyForm input[type="text"],
   form#configRallyForm input[type="datetime-local"],
@@ -1992,8 +1893,6 @@ table tbody td .btn:hover {
 }
 
 
-/*Concursos admin*/
-/* Reset y base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -2002,16 +1901,14 @@ table tbody td .btn:hover {
 }
 
 body.concursos_admin {
-  /*background-color: #f0f2f5;*/
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
 
   padding: 20px;
   color: #ff7e5f;
 }
 
-/* Título principal */
 h1 {
-  color: #ff7e5f; /* Azul vivo */
+  color: #ff7e5f; 
   font-size: 2.5rem;
   margin-bottom: 30px;
   font-weight: 700;
@@ -2019,13 +1916,11 @@ h1 {
   text-shadow: 1px 1px 3px rgba(37, 117, 252, 0.3);
 }
 
-/* Contenedor botón crear concurso */
 .crear-concurso-container {
   margin-bottom: 25px;
   text-align: center;
 }
 
-/* Botones */
 .btn-crear,
 .btn-seleccionar {
   border: none;
@@ -2041,9 +1936,8 @@ h1 {
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-/* Botón crear */
 .btn-crear {
-  background-color: #ff7e5f; /* Naranja */
+  background-color: #ff7e5f;
   box-shadow: 0 4px 8px rgba(255, 126, 95, 0.4);
 }
 
@@ -2052,9 +1946,8 @@ h1 {
   box-shadow: 0 6px 12px rgba(235, 103, 78, 0.6);
 }
 
-/* Botón seleccionar */
 .btn-seleccionar {
-  background-color: #2575fc; /* Azul */
+  background-color: #2575fc; 
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(37, 117, 252, 0.4);
 }
@@ -2064,7 +1957,6 @@ h1 {
   box-shadow: 0 6px 12px rgba(26, 86, 208, 0.6);
 }
 
-/* Concurso individual */
 .concurso {
   background: white;
   border-radius: 10px;
@@ -2086,13 +1978,11 @@ h1 {
   font-size: 1.4rem;
 }
 
-/* Contenedor para lista de concursos */
 #listaConcursos {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   body.concursos_admin {
     padding: 15px;
@@ -2113,8 +2003,6 @@ h1 {
   }
 }
 
-
-
 .btn-eliminar {
   background-color: #e74c3c;
   color: white;
@@ -2125,11 +2013,6 @@ h1 {
   border-radius: 5px;
 }
 
-
-
-
-/*Ranking*/
-/* Estilos para la página Ranking */
 body.ranking {
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
   font-family: 'Nunito', sans-serif;
@@ -2210,7 +2093,6 @@ body.ranking main h3 {
   color: #2c3e50;
 }
 
-/* Estilo para el canvas del gráfico */
 #graficoVotos {
   display: block;
   width: 100%;
@@ -2222,7 +2104,6 @@ body.ranking main h3 {
   background-color: #fff;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
   body.ranking main {
     margin: 20px 10px;
