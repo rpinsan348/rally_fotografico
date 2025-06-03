@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const user = JSON.parse(localStorage.getItem("user"));
     if (!user || user.rol !== "admin") {
         alert("Acceso no autorizado.");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
         return;
     }
     
@@ -480,5 +480,5 @@ async function validarFoto(id, estado, concurso_id) {
 
 function cerrar_sesion() {
     localStorage.removeItem("user");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }

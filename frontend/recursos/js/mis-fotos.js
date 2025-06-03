@@ -95,7 +95,7 @@ window.eliminarFoto = function (idFoto) {
       //Eliminamos los datos del usuario y del concurso del localStorage
       localStorage.removeItem("user");
       localStorage.removeItem("concurso");
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     });
   }
 });

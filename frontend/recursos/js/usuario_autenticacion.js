@@ -50,5 +50,5 @@ function cerrar_sesion() {
     //Elimina el usuario guardado en el localStorage
     localStorage.removeItem("user");
     alert("Sesión cerrada.");
-    window.location.replace("index.html");
+    window.location.replace("../index.html");
 }

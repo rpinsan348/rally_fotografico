@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       localStorage.removeItem("user");
       localStorage.removeItem("concurso");
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     });
   }
 

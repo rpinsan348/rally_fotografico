@@ -2,7 +2,7 @@ const concurso = JSON.parse(localStorage.getItem("concurso"));
 
 if (!concurso || !concurso.id) {
     alert("No se ha seleccionado un concurso. Redirigiendo al inicio.");
-    window.location.href = "index.html"; 
+    window.location.href = "../index.html"; 
 }
 
 console.log("ID del concurso:", concurso.id);
